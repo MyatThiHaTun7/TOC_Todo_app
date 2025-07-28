@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+
 <h1>Todo List with ThiHa.</h1>
 
 {% for i in todo %}
@@ -5,10 +9,12 @@
 <h1> ID => {{i.id}}</h1>
 <h1> title =>{{i.title}} </h1>
 <h1> description =>{{i.description}}</h1>
-<input type="checkbox"><span>Completed</span>
+<input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span>
 <h1>created_at => {{i.created_at}}</h1>
 <h1>updated_at => {{i.updated_at}}</h1>
 <hr>
 
 
 {% endfor %}
+
+{% endblock %}
