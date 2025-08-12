@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>Todo Details</h2>
+
+<p>Title: {{ todo.title }}</p>
+<p>description: {{ todo.description }}</p>
+
+<p>Completed</p>
+<p>{% if todo.completed %}</p>
+<span>YES</span>
+{% else %}
+<span>NO</span>
+{% endif %}
+
+<p>created_at: {{ todo.created_at }}</p>
+<p>updated_at: {{ todo.updated_at }}</p>
+
+{% endblock %}

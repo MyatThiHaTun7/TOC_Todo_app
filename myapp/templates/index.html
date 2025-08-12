@@ -2,20 +2,11 @@
 
 {% block body %} 
 
-<h1>Todo List with ThiHa.</h1>
-
-<!-- {% for i in todo %}
-
-<h1> ID => {{i.id}}</h1>
-<h1> title =>{{i.title}} </h1>
-<h1> description =>{{i.description}}</h1>
-<input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span>
-<h1>created_at => {{i.created_at}}</h1>
-<h1>updated_at => {{i.updated_at}}</h1>
-<hr>
-
-
-{% endfor %} -->
+<div>
+    <h1>Todo List with ThiHa.</h1>
+    <a href="{% url 'TodoCreate' %}">+ Create</a> 
+    <br><br><br>
+</div>
 
 <table border="1">
     <tr>
@@ -31,17 +22,19 @@
     {% for i in todo %} <!-- todo come from view -->
 
     <tbody>
-        <td>{{ i.id }}</td>
-        <td>{{ i.title }}</td>
-        <td>{{ i.description }}</td>
-        <td>4</td>
-        <td>{{ i.created_at }}</td>
-        <td>{{ i.updated_at }}</td>
-        <td>
-            <a href="#">Details</a>
-            <a href="#">Update</a>
-            <a href="#">Delete</a>
-        </td>
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.title }}</td>
+            <td>{{ i.description }}</td>
+            <td><input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span></td>
+            <td>{{ i.created_at }}</td>
+            <td>{{ i.updated_at }}</td>
+            <td>
+                <a href="{% url 'TodoDetail' i.id %}">Details</a>
+                <a href="#">Update</a>
+                <!-- <a href="{% url 'TodoDelete' i.id %}">Delete</a> -->
+            </td>
+        </tr>
     </tbody>
     {% endfor %}
 </table>

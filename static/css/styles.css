@@ -1,4 +1,15 @@
-/* body{
-background-color: chocolate;
-color: aliceblue;
-} */
+body{
+    background-color:white;
+    border: 2px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: 400;
+}
+h1{
+    background-color: white;
+    
+}
+table{
+    background-color: black;
+
+}
