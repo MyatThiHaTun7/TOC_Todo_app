@@ -2,8 +2,8 @@
 
 {% block body %}
 
-<h1>Create Form</h1>
-    <a href="{% url 'TodoList' %}"><= List</a>
+<h1>{% if todo %} Update Todo {% else %} Create Todo {% endif %}</h1>
+    <a href="{% url 'TodoList' %}"> <= List</a>
 
 
 <from action="{% url 'TodoCreate' %}" method="post" >
